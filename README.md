@@ -7,9 +7,11 @@ This is the implementation of ICCV 2017 paper *"A Generic Deep Architecture for 
 
 Note
 ----
-All the test images, trained codes, test codes, data generation codes and trained models of both reflection removal and image smoothing tasks are released here.
+All the test images, trained codes, test codes, data generation codes and trained models of both reflection removal and image smoothing tasks are released here. The ground truth reflection and background layer of synthetic reflection images are also public.
 
-Our codes are implemented in Torch framework, before testing or training the models, you need to install the latest torch framework and compile the computeEdge.lua, ComputeXGrad.lua, ComputeYGrad.lua and L1Criterion.lua under the nn module.
+Our codes are implemented in Torch framework, before testing or training the models, you need to install the latest torch framework and compile the **computeEdge.lua**, **ComputeXGrad.lua**, **ComputeYGrad.lua** and **L1Criterion.lua** under the nn module. 
+
+To be specific, the lua files have to be put in **/torch/extra/nn** module directory, and editing **init.lua** file to include the corresponding file. Finally run the command under nn directory, **luarocks make ./rocks/nn-scm-1.rockspec**. Then nn module will be independently compiled.
 
 Test images are in folder "testdata_reflection_real", "testdata_reflection_synthetic" and "testdata_smooth".
 
