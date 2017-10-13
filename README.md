@@ -3,6 +3,7 @@ CEILNet
 
 This is the implementation of ICCV 2017 paper *"A Generic Deep Architecture for Single Image Reflection Removal and Image Smoothing"* by Qingnan Fan *et al.*.
 
+Guess which is real and which is synthetic?
 ![teaser](iccv17_poster_template-teaser.png "sample")
 
 Note
