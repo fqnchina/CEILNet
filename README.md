@@ -3,6 +3,8 @@ CEILNet
 
 This is the implementation of ICCV 2017 paper *"A Generic Deep Architecture for Single Image Reflection Removal and Image Smoothing"* by Qingnan Fan *et al.*.
 
+![teaser](iccv17_poster_template-teaser.png "sample")
+
 Note
 ----
 All the test images, trained codes, test codes, data generation codes and trained models of both reflection removal and image smoothing tasks are released here.
