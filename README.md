@@ -35,7 +35,8 @@ Trained codes are lua files with the same format "training_*.lua". Note E-CNN an
 Test images are in folder "testdata_reflection_real", "testdata_reflection_synthetic" and "testdata_smooth".
 To test the trained models, run "evaluation_reflection.lua" or "evaluation_smooth.lua".
 
-Note the output reflection layer is directly subtracted from the input and predicted background layer. It doesn't reflect the image structure and appearance of the original reflection image.
+**ATTENTION**
+Our CNN dose not predict refletion layers. The following code computes approximate reflection layers by simply subtracting the predicted background layers from the input images. Note the result so-obtained may not reflect the image structure and appearance of the original reflection scene. 
 
 Cite
 ----
