@@ -59,6 +59,7 @@ for _,inputFile in ipairs(files) do
   local sav = string.gsub(savColor,'input.png','predict1.png')
   image.save(sav,pred_b[1])
 
+  -- Note the output reflection layer is directly subtracted from the input and predicted background layer. It doesn't reflect the image structure and appearance of the original reflection image.
   pred_r = pred_r/255
   local sav = string.gsub(savColor,'input.png','predict2.png')
   image.save(sav,pred_r[1])
