@@ -44,14 +44,14 @@ for _,inputFile in ipairs(files) do
     local alpha = numerator/denominator
     pred_b[1][m] = pred_b[1][m] * alpha
   end
-  local pred_r = torch.csub(inputC, pred_b)
+--  local pred_r = torch.csub(inputC, pred_b)
   
-  for m = 1,3 do
-    local numerator = torch.dot(pred_r[1][m], inputC[1][m])
-    local denominator = torch.dot(pred_r[1][m], pred_r[1][m])
-    local alpha = numerator/denominator
-    pred_r[1][m] = pred_r[1][m] * alpha
-  end
+--  for m = 1,3 do
+--    local numerator = torch.dot(pred_r[1][m], inputC[1][m])
+--    local denominator = torch.dot(pred_r[1][m], pred_r[1][m])
+--    local alpha = numerator/denominator
+--    pred_r[1][m] = pred_r[1][m] * alpha
+--  end
 
   local savColor = string.gsub(inputFile,imgPath,savePath)
 
@@ -59,10 +59,10 @@ for _,inputFile in ipairs(files) do
   local sav = string.gsub(savColor,'input.png','predict1.png')
   image.save(sav,pred_b[1])
 
-  -- Note the output reflection layer is directly subtracted from the input and predicted background layer. It doesn't reflect the image structure and appearance of the original reflection image.
-  pred_r = pred_r/255
-  local sav = string.gsub(savColor,'input.png','predict2.png')
-  image.save(sav,pred_r[1])
+ -- -- Note the output reflection layer is directly subtracted from the input and predicted background layer. It doesn't reflect the image structure and appearance of the original reflection image.
+ -- pred_r = pred_r/255
+ -- local sav = string.gsub(savColor,'input.png','predict2.png')
+ -- image.save(sav,pred_r[1])
 
   ::done::
 end
