@@ -36,6 +36,7 @@ Test images are in folder "testdata_reflection_real", "testdata_reflection_synth
 To test the trained models, run "evaluation_reflection.lua" or "evaluation_smooth.lua".
 
 **ATTENTION**
+
 Our CNN dose not predict refletion layers. The following code computes approximate reflection layers by simply subtracting the predicted background layers from the input images. Note the result so-obtained may not reflect the image structure and appearance of the original reflection scene. 
 
 Cite
