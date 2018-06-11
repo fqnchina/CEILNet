@@ -39,6 +39,10 @@ To test the trained models, run "evaluation_reflection.lua" or "evaluation_smoot
 
 Our CNN dose not predict refletion layers. The following code computes approximate reflection layers by simply subtracting the predicted background layers from the input images. Note the result so-obtained may not reflect the image structure and appearance of the original reflection scene. 
 
+Note we comment the color correction codes for the reflection removal task since we observe better performance without this module, which however still works well for the image smoothing task. This is simply due to dramatic difference between the color information of input and ground truth output images in the reflection removal task, which makes the alignment from predicted images to input images imprecise. 
+
+Without the color correction module, the numerical performance for the reflection removal task in Table 2 of the paper is improved from **18.55/0.857** (PSNR/SSIM) to **24.61/0.925**. The synthetic images employed in Table 2 are uploaded in the "testdata_reflection_synthetic_table2" folder.
+
 Cite
 ----
 
