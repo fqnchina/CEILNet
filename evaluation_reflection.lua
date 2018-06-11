@@ -37,15 +37,15 @@ for _,inputFile in ipairs(files) do
 
   local predictions = model:forward(inputs)
   local pred_b = predictions[2]
-
-  for m = 1,3 do
-    local numerator = torch.dot(pred_b[1][m], inputC[1][m])
-    local denominator = torch.dot(pred_b[1][m], pred_b[1][m])
-    local alpha = numerator/denominator
-    pred_b[1][m] = pred_b[1][m] * alpha
-  end
---  local pred_r = torch.csub(inputC, pred_b)
+--   for m = 1,3 do
+--     local numerator = torch.dot(pred_b[1][m], inputC[1][m])
+--     local denominator = torch.dot(pred_b[1][m], pred_b[1][m])
+--     local alpha = numerator/denominator
+--     pred_b[1][m] = pred_b[1][m] * alpha
+--   end
+--   Note we comment the color correction codes since we observe better performance without this module for the reflection removal task, but this module still works well for the image smoothing task. This is simply due to dramatic difference between the color information of input and ground truth output images in the reflection removal task, which makes the alignment from predicted images to input images imprecise. 
   
+--  local pred_r = torch.csub(inputC, pred_b)
 --  for m = 1,3 do
 --    local numerator = torch.dot(pred_r[1][m], inputC[1][m])
 --    local denominator = torch.dot(pred_r[1][m], pred_r[1][m])
