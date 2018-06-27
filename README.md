@@ -1,7 +1,9 @@
 CEILNet
 =======
 
-This is the implementation of ICCV 2017 paper *"A Generic Deep Architecture for Single Image Reflection Removal and Image Smoothing"* by Qingnan Fan *et al.*.
+This is the implementation of ICCV 2017 paper *"A Generic Deep Architecture for Single Image Reflection Removal and Image Smoothing"* by Qingnan Fan  *et al.*.
+
+Check my [homepage](<https://fqnchina.github.io/homepage/>) for the paper, supplemental material and the other info.
 
 Guess which is real and which is synthetic?
 ![teaser](iccv17_poster_template-teaser.png "sample")
@@ -42,6 +44,10 @@ Our CNN dose not predict refletion layers. The following code computes approxima
 Note we comment the color correction codes for the reflection removal task since we observe better performance without this module, which however still works well for the image smoothing task. This is simply due to the dramatic difference between the color information of input and ground truth output images in the reflection removal task, which makes the alignment from predicted images to input images imprecise. Thanks [Vandermode](<https://github.com/Vandermode>) for pointing this out.
 
 Without the color correction module, the numerical performance for the reflection removal task in Table 2 of the paper is improved from **18.55/0.857** (PSNR/SSIM) to **24.61/0.925**. The synthetic images employed in Table 2 are uploaded in the "testdata_reflection_synthetic_table2" folder. 
+
+**Additional tasks**
+
+Note our proposed CEILNET can be applied on a broad range of low-level vision tasks. We also upload the trained model on image denoising, inpainting (pixel interpolation). Our models are also able to achieve state-of-the-art performance on these tasks. You can further test our model on the uploaded test images.
 
 Cite
 ----
